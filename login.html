@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- AIzaSyBQ1AhVuOTUSjkRbwOIqvsp7X07sDrkLxo -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+ <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js"></script>
+
+
+</head>
+
+<body class="bg-[#191B1F] text-white">
+    <header class="fixed z-50 left-0 right-0 top-0">
+
+        <nav class="md:px-7 py-3  flex flex-col justify-start items-start lg:flex-row lg:justify-between lg:items-center"
+            id="navbar">
+            <div class="flex gap-5 px-3 justify-center items-center">
+                <button class="text-white text-2xl lg:hidden">
+                    <i onclick="toggleMenu()" class="fa-solid fa-bars" id="menubar"></i>
+                </button>
+                <a href="index.html"><img src="assest/logo.svg" alt="logo."></a>
+            </div>
+            <div class="hidden lg:block w-full lg:w-auto" id="navbar-visible">
+                <ul class="text-white lg:space-x-8 lg:justify-center lg:items-center font-medium py-5 lg:py-0 flex flex-col lg:gap-0 text-2xl lg:text-base bg-[#2B2D33] lg:bg-transparent w-full my-4 lg:my-0 lg:w-auto lg:flex-row ">
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="about.html">About
+                            Us</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="pricing.html">Pricing</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="for_studio.html">For
+                            Studios</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="features.html">Features</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="create_script.html">Create Script</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="blog.html">Blog</a>
+                    </li>
+                    <li class="bg-white text-center text-black lg:px-4 lg:py-1 font-bold rounded-full border-b py-4 px-5 my-4 lg:my-0 border-black lg:border-none"><a href="login.html">Log in</a>
+                    </li>
+                    <!-- <button
+                        class="bg-white text-black lg:px-4 lg:py-1 font-bold rounded-full border-b py-4 px-5 my-4 lg:my-0 border-black lg:border-none">Log
+                        in</button> -->
+                        <!-- 897271725467-jr67edladmprcreb99bmb42f7gloara6.apps.googleusercontent.com -->
+                        <!-- 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 -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="relative">
+        <img class="absolute h-screen object-cover w-full -z-30" src="assest/hero-img-login copy.webp" alt="">
+        <div class="absolute h-screen inset-0 w-full bg-black/50 -z-20"></div>
+    </div>
+
+    <div class="flex flex-col h-screen lg:flex-row justify-center items-center lg:px-10 px-5">
+        <div class="lg:w-1/2 w-full h-[40%] flex justify-center items-center">
+            <p class="lg:text-7xl font-bold text-5xl">Unlock <br>  the full NOLAN <br> Experience</p>
+        </div>
+        <div class="lg:w-1/2 w-full  bg-black/60 shadow-lg shadow-black h-[60%] lg:h-auto  py-8 rounded-xl flex flex-col justify-center items-center space-y-10">
+            <h1 class="text-4xl font-semibold">LOG IN</h1>
+           <div class="bg-white text-black rounded-full cursor-pointer">
+                    <button id="googleSignInBtn" class="font-bold flex items-center justify-between w-64 py-3 px-5">
+                        <img src="assest/google.svg" alt="">
+                        Sign in with Google
+                    </button>
+
+           </div>
+           <div class="bg-white text-black rounded-full cursor-pointer">
+                 <p class="font-bold flex items-center justify-between w-64 py-3 px-5 "><img src="assest/facebook.svg" alt=""> Continue with Facebook</p>
+           </div>
+           <div class="bg-white text-black rounded-full cursor-pointer">
+                 <p class="font-bold flex items-center justify-between w-64 py-3 px-5 "><img src="assest/email.svg" alt=""> Continue with Email</p>
+           </div>
+           <div class="bg-[#222429] text-center text-blue-900 rounded-full cursor-pointer">
+                 <p class="font-bold w-64 py-3 px-5">Forget Password ?</p>
+           </div>
+           <div class="font-semibold">
+            <p class="text-sm px-5">By signing up, you agree to the <a class="text-blue-900" href=""> Terms of Service</a> and <a class="text-blue-900" href="">Privacy Policy</a>.</p>
+           </div>
+          
+        </div>
+    </div>
+    
+    <footer>
+        <div class="w-full flex flex-col lg:justify-center xl:gap-x-72 gap-10 lg:flex-row items-center text-center space-y-4 py-10 text-white"
+            id="footer">
+            <div class="col">
+                <img src="assest/logo.svg" alt="">
+            </div>
+            <div class=" text-lg font-semibold space-y-1 text-center">
+                <p>© NolanAI, Inc. 2024</p>
+                <p>Privacy Policy | Terms of Service | Referral</p>
+                <p>Program | Releases</p>
+            </div>
+            <div class="space-x-5">
+                <a href=""> <i class="fa-brands fa-instagram text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-threads text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-x-twitter text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-youtube text-4xl cursor-pointer"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    import { getAuth, signInWithRedirect, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+
+        const firebaseConfig = {
+        apiKey: "AIzaSyB4_YEwbEqUISubT_MirFg106oPcHCk0sg",
+        authDomain: "nolanaiclone-6fe16.firebaseapp.com",
+        projectId: "nolanaiclone-6fe16",
+        storageBucket: "nolanaiclone-6fe16.appspot.com",
+        messagingSenderId: "566487704965",
+        appId: "1:566487704965:web:7e328103935e57f1b7d0ec",
+        measurementId: "G-14G7VC0DDY"
+        };
+
+        const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider(); // Corrected: Removed firebase.auth part
+
+    function signInWithGoogle() {
+        signInWithRedirect(auth, provider);
+            // .then((result) => {
+            //     // Signed in successfully, get user data
+            //     const user = result.user;
+            //     console.log(user);
+            // })
+            // .catch((error) => {
+            //     // Handle errors
+            //     console.error(error);
+            // });
+    }
+
+    // Attach event listener to the Google Sign-In button
+    document.getElementById('googleSignInBtn').addEventListener('click', () => {
+        signInWithGoogle();
+    });
+    </script>
+
+
+</body>
+
+</html>

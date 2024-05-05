@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Creat Script</title>
+</head>
+<body class="bg-[url('assest/main.webp')] bg-cover bg-fixed text-white">
+    <header class="fixed z-50 left-0 right-0 top-0">
+        <nav class="md:px-7 py-3  flex flex-col justify-start items-start lg:flex-row lg:justify-between lg:items-center"
+            id="navbar">
+            <div class="flex gap-5 px-3 justify-center items-center">
+                <button class="text-white text-2xl lg:hidden">
+                    <i onclick="toggleMenu()" class="fa-solid fa-bars" id="menubar"></i>
+                </button>
+                <a href="index.html"><img src="assest/logo.svg" alt="logo."></a>
+            </div>
+            <div class="hidden lg:block w-full lg:w-auto" id="navbar-visible">
+                <ul class="text-white lg:space-x-8 lg:justify-center lg:items-center font-medium py-5 lg:py-0 flex flex-col lg:gap-0 text-2xl lg:text-base bg-[#2B2D33] lg:bg-transparent w-full my-4 lg:my-0 lg:w-auto lg:flex-row ">
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="about.html">About
+                            Us</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="pricing.html">Pricing</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="for_studio.html">For
+                            Studios</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="features.html">Features</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="create_script.html">Create Script</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="blog.html">Blog</a>
+                    </li>
+                    <li class="bg-white text-center text-black lg:px-4 lg:py-1 font-bold rounded-full border-b py-4 px-5 my-4 lg:my-0 border-black lg:border-none"><a href="login.html">Log in</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="flex justify-center h-screen w-full bg-black/50 items-center">
+        <div class=" bg-white rounded-lg ">
+            <div class="flex justify-between px-5 py-4 text-black/80 text-xl font-bold border-b">
+                <h1>Create a new script</h1>
+               <a href="./index.html"> <button class="bg-gray-200 rounded-full justify-center items-center w-8 h-8" ><span class="material-symbols-outlined text-blue-700 text-base font-bold">close</span> </button></a>
+            </div>
+            <div class="text-base">
+                <p class="text-gray-600 px-5 py-6">Select the format you want to write a script for:</p>
+            </div>
+            <div role="presentation" class="text-black border rounded-xl mb-4 flex justify-start cursor-pointer mx-5 items-center">
+                <input type="radio" name="scriptType" id="film" class="w-5 h-5 ml-5" required>
+                <div class="flex flex-col justify-center items-start px-8 py-4">
+                    <label  for="film" class="text-lg font-bold" >Feature Film  <p class="font-normal text-sm"> Begin crafting your feature film screenplay with the assistance of Co-Pilot's power.</p></label>    
+                </div>
+            </div>
+            <div role="presentation" class="text-black border rounded-xl mb-5 flex justify-center cursor-pointer mx-5 items-center">
+                <input type="radio" name="scriptType" id="video" class="w-5 h-5 ml-5" required>
+                <div class="flex flex-col justify-center items-start px-8 py-4">
+                    <label  for="video" class="text-lg font-bold">Video Short<p class="font-normal text-sm"> Take your video shorts to new heights by utilizing AI to craft your scripts in screenplay format.</p></label>    
+                </div>
+            </div>
+            <hr>
+            <div class="flex justify-between items-center px-10 my-5">
+                <button class="text-blue-700 bg-gray-300 px-5 py-2 rounded-full font-bold">Cancel</button>
+                <button id="nextButton" class="bg-blue-700 text-white px-5 py-2 rounded-full font-bold">Next →</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="w-full flex flex-col lg:justify-center xl:gap-x-72 gap-10 lg:flex-row items-center text-center space-y-4 py-10 text-white"
+            id="footer">
+            <div class="col">
+                <img src="assest/logo.svg" alt="">
+            </div>
+            <div class=" text-lg font-semibold space-y-1 text-center">
+                <p>© NolanAI, Inc. 2024</p>
+                <p>Privacy Policy | Terms of Service | Referral</p>
+                <p>Program | Releases</p>
+            </div>
+            <div class="space-x-5">
+                <a href=""> <i class="fa-brands fa-instagram text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-threads text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-x-twitter text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-youtube text-4xl cursor-pointer"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"> </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const nextButton = document.getElementById("nextButton");
+            const radios = document.querySelectorAll('input[name="scriptType"]');
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.checked) {
+                        if (this.id === "film") {
+                            nextButton.onclick = function() {
+                                window.location.href = './script_form.html';
+                            };
+                        } else if (this.id === "video") {
+                            nextButton.onclick = function() {
+                                window.location.href = './create_video_script.html';
+                            };
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

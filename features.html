@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Feature</title>
+</head>
+
+<body class="bg-[#191B1F] text-white">
+    <header class="fixed z-50 left-0 right-0 top-0">
+
+        <nav class="md:px-7 py-3  flex flex-col justify-start items-start lg:flex-row lg:justify-between lg:items-center"
+            id="navbar">
+            <div class="flex gap-5 px-3 justify-center items-center">
+                <button class="text-white text-2xl lg:hidden">
+                    <i onclick="toggleMenu()" class="fa-solid fa-bars" id="menubar"></i>
+                </button>
+                <a href="index.html"><img src="assest/logo.svg" alt="logo."></a>
+            </div>
+            <div class="hidden lg:block w-full lg:w-auto" id="navbar-visible">
+                <ul
+                    class="text-white lg:space-x-8 lg:justify-center lg:items-center font-medium py-5 lg:py-0 flex flex-col lg:gap-0 text-2xl lg:text-base bg-[#2B2D33] lg:bg-transparent w-full my-4 lg:my-0 lg:w-auto lg:flex-row ">
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="about.html">About
+                            Us</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="pricing.html">Pricing</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="for_studio.html">For
+                            Studios</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="features.html">Features</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="create_script.html">Create Script</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="blog.html">Blog</a>
+                    </li>
+                    <li
+                        class="bg-white text-center text-black lg:px-4 lg:py-1 font-bold rounded-full border-b py-4 px-5 my-4 lg:my-0 border-black lg:border-none">
+                        <a href="login.html">Log in</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="h-[50vh]">
+        <div> <img class="absolute object-cover -z-30 md:w-full h-[50%]" src="assest/Rightanglecamera.webp"
+                alt="hero image for Studios"></div>
+        <div class="text-white absolute z-20 top-20 left-[5vw]">
+            <p class="md:text-7xl font-bold my-5 text-5xl">FEATURES</p>
+            <p class="md:text-2xl font-bold my-5 text-xl">See what NolanAI comprehensive toolkit can do for you.</p>
+        </div>
+    </div>
+
+
+    <div class="md:px-10 px-2 flex flex-col xl:flex-row justify-center items-center  mx-auto -mt-20 gap-4"
+        id="card-container">
+
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="md:px-10 px-2 flex flex-col xl:flex-row justify-center items-center mt-16 mx-auto gap-4"
+        id="card-container">
+
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+        <!-- third card end here -->
+    </div>
+
+
+    <div class="md:px-10 px-2 flex flex-col xl:flex-row justify-center items-center mt-16 mx-auto gap-4"
+        id="card-container">
+
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+        <div class="bg-[#2B2D33] flex-grow rounded-xl xl:w-48 h-72 shadow-md shadow-cyan-500/75" id="card">
+            <div class="px-10 flex h-64">
+
+                <div
+                    class="bg-blue-600 my-8 w-[5rem] h-[5rem] rounded-[5rem] flex  flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-4xl">psychology</span>
+                </div>
+
+                <div class="text-white w-3/4">
+                    <h1 class="md:text-2xl text-lg font-bold py-5 px-2">PLOT HOLE DETECTION REPORT</h1>
+                    <p class="text-sm pb-5 px-2 font-semibold text-[#636469] leading-5">With the Plot Hole Detection
+                        Report, you can ensure the consistency and quality of your story, enhancing the overall
+                        engagement of your content.</p>
+                </div>
+            </div>
+
+            <div class="px-10 flex items-end">
+                <p class="">Explore Features </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <footer>
+        <div class="w-full flex flex-col lg:justify-center xl:gap-x-72 gap-10 lg:flex-row items-center text-center space-y-4 py-10 text-white"
+            id="footer">
+            <div class="col">
+                <img src="assest/logo.svg" alt="">
+            </div>
+            <div class=" text-lg font-semibold space-y-1 text-center">
+                <p>© NolanAI, Inc. 2024</p>
+                <p>Privacy Policy | Terms of Service | Referral</p>
+                <p>Program | Releases</p>
+            </div>
+            <div class="space-x-5">
+                <a href=""> <i class="fa-brands fa-instagram text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-threads text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-x-twitter text-4xl cursor-pointer"></i></a>
+                <a href=""> <i class="fa-brands fa-youtube text-4xl cursor-pointer"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

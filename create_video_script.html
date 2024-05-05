@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="https://js.openai.com/v1/openai.js"></script>
+        <!-- const openai = new OpenAI('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'); -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #create_script_synopsis::placeholder {
+            color: #575757; /* Gray color, adjust as needed */
+        }
+        .hidden { display: none; }
+    </style>
+     <style id="__jsx-713546573">
+        :root {
+            /* --lexen_deca: '__Lexend_Deca_3b5387', '__Lexend_Deca_Fallback_3b5387'; */
+            --courier_prime: '__Courier_Prime_baa3da', '__Courier_Prime_Fallback_baa3da'
+        }
+        body {
+            font-family: var(--lexen_deca), sans-serif;
+        }
+
+    </style>
+    <link rel="stylesheet" href="./script1.css">
+    <title>Create Script</title>
+</head>
+
+<body class="bg-[url('assest/main.webp')] bg-cover bg-fixed text-white flex flex-col min-h-screen md:w-1/2 mx-auto">
+    <header class="fixed z-50 left-0 right-0 top-0">
+
+        <nav class="md:px-7 py-3  flex flex-col justify-start items-start lg:flex-row lg:justify-between lg:items-center"
+            id="navbar">
+            <div class="flex gap-5 px-3 justify-center items-center">
+                <button class="text-white text-2xl lg:hidden">
+                    <i onclick="toggleMenu()" class="fa-solid fa-bars" id="menubar"></i>
+                </button>
+                <a href="index.html"><img src="assest/logo.svg" alt="logo."></a>
+            </div>
+            
+            <div class="hidden lg:block w-full lg:w-auto" id="navbar-visible">
+                <ul class="text-white lg:space-x-8 lg:justify-center lg:items-center font-medium py-5 lg:py-0 flex flex-col lg:gap-0 text-2xl lg:text-base bg-[#2B2D33] lg:bg-transparent w-full my-4 lg:my-0 lg:w-auto lg:flex-row ">
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="about.html">About
+                            Us</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="pricing.html">Pricing</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="for_studio.html">For
+                            Studios</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="features.html">Features</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a
+                            href="create_script.html">Create Script</a></li>
+                    <li class="border-b py-5 px-5 border-black lg:border-none lg:px-0 lg:py-0"><a href="blog.html">Blog</a>
+                    </li>
+                    <li class="bg-white text-center text-black lg:px-4 lg:py-1 font-bold rounded-full border-b py-4 px-5 my-4 lg:my-0 border-black lg:border-none"><a href="login.html">Log in</a>
+                    </li>
+                
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="flex justify-center h-full w-full items-center py-20 container-width ">
+        <div class="bg-white rounded-lg w-3/4 ">
+            <div class="flex justify-between px-5 py-4 text-black text-xl font-bold border-b">
+                <h1 class="card-title">Create a new script</h1>
+                <a href="./index.html"> <button class="bg-gray-200 rounded-full justify-center items-center w-8 h-8" ><span class="material-symbols-outlined text-blue-700 text-base font-bold">close</span> </button></a>
+            
+            </div>
+            <div class="px-5 py-4">
+                <label for="create_script_title" class="absolute -top-3 left-0 text-xs text-gray-500 bg-white px-1">Title</label>
+                <input id="create_script_title" name="title" type="text" placeholder="Untitled Video Short" 
+                       class="w-full border-2 border-gray-300 rounded-lg p-3 text-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-black" 
+                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-required="true">
+            </div>
+            <div class="relative px-5 py-4">
+                <div class="flex items-center border-2 border-gray-300 rounded-lg ">
+                    <div id="selected-genres" class="flex flex-wrap items-center grow p-3">
+                        <input id="create_script_genre" type="text" placeholder="Social Media Platform" class="w-full p-3 text-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-black" readonly/>
+                    <span id="selected-genres" class="flex items-center"></span>
+                    </div>
+                    <button onclick="clearAllGenres()" class="text-sm font-bold flex items-center px-1 py-1 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300" style="margin-right: 4px; color: #2a2e37;"">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button onclick="toggleDropdown()" class="text-sm font-bold flex items-center px-3 py-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300" style="color: rgba(26, 29, 36, .44); background-color: rgba(43, 69, 107, .12);">
+                        <i class="fas fa-angle-down"></i>
+                    </button>
+                </div>
+                <div id="dropdown-menu" class="hidden absolute right-0 mt-1 w-full bg-white border border-gray-300 shadow-lg rounded-lg overflow-auto max-h-60 z-50">
+                    <ul class="text-black">
+                        <li class="p-2 hover:bg-gray-100 cursor-pointer" onclick="selectGenre('TikTok')">TikTok</li>
+                        <li class="p-2 hover:bg-gray-100 cursor-pointer" onclick="selectGenre('InstagramReel')">Instagram Reel</li>
+                    </ul>
+                </div>
+                <div id="genre_error" class="hidden" role="alert"><div class="ant-form-item-explain-error">Genre Is Required</div></div>
+            </div>
+            <div class="px-5 py-4 relative">
+                <textarea id="create_script_synopsis" name="Synopsis" placeholder="Write a video script about:" 
+                          class="w-full border-2 border-gray-300 rounded-lg p-3 text-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-black" 
+                          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-required="true"></textarea>
+            </div>
+
+            <div class="flex justify-between items-center w-full">
+                <a href="./index.html">
+                <button type="button" class="bg-gray-200 text-blue-700 py-2 px-5 rounded-full font-bold text-sm focus:outline-none hover:bg-gray-300 ml-4 md-4">
+                    <span>Cancel</span>
+                </button></a>
+
+                <div class="flex items-center space-x-2">
+                    <a href="./create_script.html">
+                    <button type="button" class="bg-blue-100 text-blue-700 py-2 px-4 rounded-full font-bold text-sm focus:outline-none hover:bg-blue-600">
+                        <span>Back</span>
+                    </button></a>
+
+                    <a href="./originalScript.html"><button type="button" class="bg-blue-500 text-white py-2 px-4 rounded-full text-sm flex items-center font-bold focus:outline-none hover:bg-blue-600 mr-4">
+                        <span>Submit</span>
+                        <i class="fas fa-paper-plane ml-2"></i> 
+                    </button></a>
+                    <div class="w-4 "></div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <footer class="w-full py-10 text-white  flex justify-between items-center px-4 lg:px-10">
+
+        <div>
+            <img src="assest/logo.svg" alt="Company Logo">
+        </div>
+
+        <div class="text-center">
+            <p>© NolanAI, Inc. 2024</p>
+            <p>Privacy Policy | Terms of Service | Referral Program | Releases</p>
+        </div>
+
+        <div class="space-0">
+            <a href=""> <i class="fa-brands fa-instagram text-xl cursor-pointer text-white"></i></a>
+            <a href=""> <i class="fa-brands fa-threads text-xl cursor-pointer text-white"></i></a>
+            <a href=""> <i class="fa-brands fa-twitter text-xl cursor-pointer text-white"></i></a>
+            <a href=""> <i class="fa-brands fa-youtube text-xl cursor-pointer text-white"></i></a>
+        </div>
+
+    </footer>
+    <script src="script.js"> </script>
+</body>
+
+</html>
